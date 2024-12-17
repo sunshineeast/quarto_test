@@ -1,0 +1,62 @@
+---
+title: "Medical Analytics Report"
+author: "HQ"
+format: 
+  html:
+    fontsize: 10pt
+    code-overflow: wrap
+embed-resources: true
+smooth-scroll: true
+code-tools:
+    source: false
+    toggle: false
+    caption: none
+toc: true
+toc-location: right-body
+echo: False
+warning: False
+message: false
+jupyter: python3
+theme:
+  light: lux
+  dark: slate
+---
+
+
+This is a ***Sample Medical Analytics Report*** for **Mr. xxx**. It is genereted through ***HQ*** the Health Analytics & Longevity Platform. 
+
+This report contains clickable elements like `table of content`, `tabs`,`interactive charts` and multiple sections for easy navigation & viewing experience.
+
+
+
+
+```{python}
+#| include: false
+
+import polars as pl
+import pandas as pd
+# import itables
+from plotnine import *
+from plotly import express as px
+
+import plotly.io as pio
+pio.renderers.default = "notebook"
+
+pl.Config.set_tbl_hide_column_data_types(True)  
+pl.Config.set_tbl_hide_dataframe_shape(True) 
+pl.Config.set_tbl_cols(-1)
+pl.Config.set_tbl_rows(-1)
+```
+
+
+```{python}
+df = pd.read_csv(r"2024-09-25_All_Combined.csv",parse_dates=True,dayfirst=True) 
+
+df = df.drop_duplicates()
+```
+
+```{python}
+df.head()
+```
+
+---
