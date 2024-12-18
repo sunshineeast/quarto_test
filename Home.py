@@ -75,7 +75,9 @@ if st.session_state.Gen_Report:
     ss.cmd_str = "quarto render Report-test.qmd --output Report-test.html"
     st.write(ss.cmd_str)
 
-    subprocess.run(shlex.split(f"{sys.executable} -m quarto render Report-test.qmd --output Report-test.html"))
+    # subprocess.run(shlex.split(f"{sys.executable} -m quarto render Report-test.qmd --output Report-test.html"))
+    subprocess.run(["bash", "bash_file.sh", "Report-test.qmd", "Report-test.html"])
+
   
     st.subheader("Report Generated")
     st.write(os.listdir())
