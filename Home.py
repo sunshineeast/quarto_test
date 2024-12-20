@@ -10,6 +10,7 @@ import plotly.io as pio
 import shutil
 import yaml
 import sys
+from plotnine import *
 # import time
 
 st.set_page_config(page_title="Health Quant Analysis",
@@ -50,6 +51,32 @@ st.markdown("<h1 style='text-align: center; font-size: 50px;color: black;letter-
 st.markdown("<h1 style='text-align: center; font-size: 38px;color: black;letter-spacing: 3px;'>(Under Construction)</h1>", unsafe_allow_html=True)
 
 # st.write(f"Session ID: {get_session_id()}")
+
+plt_test = (ggplot() + # 
+            annotate('text', x = 1, y = 4, label = str(Total_normal_perc_val) + '%', size=70, color="#988275",family="fantasy") +
+            annotate('text', x = 3, y = 4, label = str(Latest_normal_perc_val) + '%', size=70, color="#988275",family="fantasy") +
+            
+            annotate('text', x = 1, y = 4.7, label = "Normal \nTest Results\nOn Overall\n Test Data", 
+                     size=24, color="#988275",family="fantasy") +
+            
+            
+            annotate('path', x=[.5, 1.5], y=[4.35, 4.35], color="#988275",size=3) +
+            annotate('path', x=[.5, 1.5], y=[3.7, 3.7], color="#988275",size=3) +
+            
+            
+            annotate('text', x = 3, y = 4.7, label = "Normal \nTest Results\nOn Latest\n Test Data", 
+                     size=24, color="#988275",family="fantasy") +
+            
+            annotate('path', x=[2.5, 3.5], y=[4.35, 4.35], color="#988275",size=3) +
+            annotate('path', x=[2.5, 3.5], y=[3.7, 3.7], color="#988275",size=3) +
+            
+            geom_vline(xintercept=2, color="#988275", linetype="dashed") +
+            
+            coord_cartesian(xlim=(0.5, 4.5), ylim=(3.5, 5)) 
+            + theme_void()
+            )
+
+st.pyplot(plt_test)
 
 v_spacer(6)
 
