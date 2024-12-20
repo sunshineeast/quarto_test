@@ -76,7 +76,7 @@ plt_test = (ggplot() + #
             + theme_void()
             )
 
-st.pyplot(ggplot.draw(plt_test))
+st.pyplot(ggplot.draw(plt_test), use_container_width=True)
 
 v_spacer(6)
 
