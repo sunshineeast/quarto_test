@@ -53,8 +53,8 @@ st.markdown("<h1 style='text-align: center; font-size: 38px;color: black;letter-
 # st.write(f"Session ID: {get_session_id()}")
 
 plt_test = (ggplot() + # 
-            annotate('text', x = 1, y = 4, label = str(Total_normal_perc_val) + '%', size=70, color="#988275",family="fantasy") +
-            annotate('text', x = 3, y = 4, label = str(Latest_normal_perc_val) + '%', size=70, color="#988275",family="fantasy") +
+            annotate('text', x = 1, y = 4, label = str(90) + '%', size=70, color="#988275",family="fantasy") +
+            annotate('text', x = 3, y = 4, label = str(92) + '%', size=70, color="#988275",family="fantasy") +
             
             annotate('text', x = 1, y = 4.7, label = "Normal \nTest Results\nOn Overall\n Test Data", 
                      size=24, color="#988275",family="fantasy") +
